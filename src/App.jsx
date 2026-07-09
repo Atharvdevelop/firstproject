@@ -9,6 +9,8 @@ import About from './Pages/About';
 import Counter from './components/Counter';
 import Login from './components/Login';
 import CardDetails from './components/CardDetails';
+import Signup from './components/Signup';
+import UserData from './Pages/UserData';
 function App() {
   const [name,setname] = React.useState('Atharv')
   const [message,setmessage] = React.useState('Initial Value')
@@ -20,13 +22,15 @@ function App() {
     <Navigation login = {login} />
     <Counter />
     <Login setmessage={setmessage} />
+    <Signup />
     <p className='text-center text-2xl font-bold mt-4'>{message}</p>
-
-    <Routes>
+    
+   <Routes>
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path='/'element={<Card/>}/>
       <Route path='/food/:id'element={<CardDetails/>}/>
+      <Route path='/data' element={<UserData/>} />
     </Routes>
    
 
